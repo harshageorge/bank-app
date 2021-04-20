@@ -1,0 +1,37 @@
+<div class="bg-img">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <h1>Welcome to SBI</h1>
+        </div>
+        <div class="col-4"></div>
+      </div>
+      
+      <!-- <p>Name: {{uname}}</p>
+      <p>Password: {{pswd}}</p> -->
+  
+  
+      <div class="mb-3">
+        <label for="accno" class="form-label"><b>Account number</b></label>
+        <input type="text"   formControlName ="accno" name="accno" class="form-control" id="accno">
+        <div *ngIf="(this.loginForm.get('accno')?.touched||this.loginForm.get('accno')?.dirty)&&this.loginForm.get('accno')?.errors"class="error">invalid accnumber.</div>
+      </div>
+      <div class="mb-3">
+        <label for="pswd" class="form-label"><b>Password</b></label>
+        <input type="password"  formControlName ="pswd" name="pswd" class="form-control" id="pswd">
+        <div *ngIf="(this.loginForm.get('pswd')?.touched||this.loginForm.get('pswd')?.dirty)&&this.loginForm.get('pswd')?.errors" class="error">invalid password.</div>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary">login</button> 
+      
+      <a routerLink="register">Registration</a>
+     
+    </div>
+  </form>
+</div>
